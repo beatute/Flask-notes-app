@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+  }
+
+  
+/* Header: */
+  
+nav {
+    height: 100px;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    box-shadow: var(--shaddow-top);
+    align-items: center;
+    
+  }
+.logo{
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.nav-item{
+  padding-right: 10px;
+}
+
+/* Footer: */
+
+.footer-container {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    height: 100px;
+    background: #abb2b8ae;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: var(--shaddow-top);
+    padding: 20px;
+  }
+  
+.footer-container p {
+    font-size: 0.85rem;
+  }
+  
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+  }
+
+/* Flashes: */
+
+.flashes{
+    color: #e61873;
+    margin-bottom: 20px;
+}
+
+/* Index page: */
+
+
+
+.app-name{
+  background-position: center;
+  padding-bottom: 20px;
+  
+}
+
+.bg-image{
+  background-image: url("/static/images/image-asset.jpeg");;
+  background-repeat:no-repeat;
+
+  background-position: center;
+  background-size: cover;
+
+}
+
+.after-image{
+  height: 80px;
+}
+.after-image1{
+  height: 160px;
+}
+.after-image2{
+  height: 300px;
+}
+
+.cta {
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.right-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #444;
+  padding-bottom: 20px;
+}
+
+.left-container span::after, .right-container span::after {
+  content: ",";
+}
+
+.left-container span:is(:last-child)::after,
+.right-container span:is(:last-child)::after {
+  content: "";
+}
+
+.left-container h3, p, .right-container h3, p {
+  padding: 0;
+  margin: 0;
+}
+
+.text{
+  font-style: italic;
+  font-size: 18px;
+  padding-top: 30px;
+}
+
+.add_buttons{
+  padding-top: 10px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+
+.addnotebook, .submitbutton{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Notebooks: */
+
+/* .notebook-button-block{
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+} */
+
+.addnotebook{
+margin-left: 43%;
+}
+
+.btn.btn-outline-secondary.btn-sm{
+  margin-top: 30px;
+  margin-bottom: 500px;
+}
+
+.submitbutton, .resize{
+  margin-bottom: 500px;
+}
+
+
