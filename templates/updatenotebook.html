@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/update/{{nub.id}}" method="POST">
+    <h3>Update Notebook</h3>
+    <div class="form-group">
+      <label for="recipient-name" class="col-form-label">Title:</label>
+      <input type="text" class="form-control" name="title" id="recipient-name" value="{{nub.title}}">
+    </div>
+     <button type="submit" class="btn btn-outline-secondary btn-sm">Update</button>
+</form>
+    
+{% endblock content %}

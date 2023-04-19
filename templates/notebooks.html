@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<p class="addnotebook"><a href="{{ url_for('new_notebook', user_id=user.id)}}">Add new Notebook</a></p>
+ 
+
+    <div class= "notebook-button-block">
+        <table class="table">
+      {% if allnotebooks %}
+            <thead class="table-light">
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Notes</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for notebook in allnotebooks %} 
+                <tr>
+                  <td><p ><span style="color:#12a19a"><strong>{{notebook.title}}</strong></span> </p></td>
+                  <td> {% if notebook.notess  %}
+
+                {% for notes in notebook.notess %}
+                <p> {{ notes.title }}, <em>{{notes.description}}</em> </p>
+
+
+
+                {% endfor %}
+                {% endif %}
+              
+  
+                
+                </td>
+                  <td>
+                <a href="/update/{{notebook.id}}" class="btn btn-outline-success btn-sm">Update</button>
+                <a></a>
+                <a href="/delete/{{notebook.id}}" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+                </tr>
+
+                {% endfor %}
+                {% endif %}
+              </tbody>
+          </table>
+    </div>  
+
+                <p class="resize"></p>
+
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+
+  <h2 class="app-name"
+      style="text-align: center">
+      <span style="color:#0e71b8"> {{ current_user.username }} ! </span>
+      <span style="color:#444"> Save your notes to&nbsp </span>
+        <span style="color:#662483">T</span>
+        <span style="color:#12a19a">A</span>
+        <span style="color:#cfb2d6">K</span>
+        <span style="color:#f0e620">E &nbsp</span>
+        <span style="color:#f9b233">N</span>
+        <span style="color:#cbbb9f">O</span>
+        <span style="color:#e61873">T</span>
+        <span style="color:#0e71b8">E &nbsp!</span>
+        <span style="color:rgb(132, 125, 125)">
+      </span>
+    <div class="cta">
+
+            <div class="left-container">
+
+
+                    
+                    <p class="text">CHECK your Notes and Notebooks!</p>
+                    <div class="add_buttons">
+                    <p><a href="{{ url_for('allnotes')}}">My Notes</a></p> 
+                    <p><a href="{{ url_for('allnotebooks')}}">My Notebooks</a></p>
+                    </div>
+
+            </div>
+
+            <div class="right-container">
+
+
+                    
+                    <p class="text">ADD your Notes and Notebooks!</p>
+                    <div class="add_buttons">
+                    <p class="addnotebooks"><a href="{{ url_for('new_note', user_id=user.id)}}">Add new Note</a></p>
+                    <p class="addnotebooks"><a href="{{ url_for('new_notebook', user_id=user.id)}}">Add new Notebook</a></p>
+                    </div>
+
+            </div>
+        </div>
+
+
+
+{% else %}
+
+
+<h4 
+  class="app-name"
+  style="text-align: center"><span>
+    <span style="color:#662483">T</span>
+    <span style="color:#12a19a">A</span>
+    <span style="color:#cfb2d6">K</span>
+    <span style="color:#f0e620">E &nbsp</span>
+    <span style="color:#f9b233">N</span>
+    <span style="color:#cbbb9f">O</span>
+    <span style="color:#e61873">T</span>
+    <span style="color:#0e71b8">E</span>
+    <span style="color:rgb(132, 125, 125)">&nbsp - THE EASIEST WAY TO MANAGE YOUR NOTES</span>
+</span></h4>
+
+
+<div 
+  class="bg-image"
+  style="
+    background-image: url('https://images.squarespace-cdn.com/content/v1/50eca855e4b0939ae8bb12d9/1491603286291-OBWY64NI1EQATK05MCAZ/image-asset.jpeg?format=1000w');
+    height: 60vh;
+    text-align: center;
+  "
+></div>
+<div 
+  class="after-image"
+  
+></div>
+
+
+
+    {% endif %}
+
+{% endblock %}

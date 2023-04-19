@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container mt-5" style="width:800px">
+    <table class="table" style="width: 100%;border:0px">
+        <h3 align="center">User details</h3>
+        <br>
+        <tbody>
+            <tr style="font-size: 18px;">
+                <th scope="row">Email ID</th>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr style="font-size: 18px;">
+                <th scope="row">First Name</th>
+                <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-inline mx-2 my-lg-0">
+                        <a href="/deleteAcc/{{user.id}}" class="btn btn-danger my-2 my-sm-0" style="font-size:16px"
+                            type="button" id="logout">Delete Account</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</div>
+{% endblock content %}

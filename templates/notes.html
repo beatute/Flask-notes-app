@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<p class="addnotebook"><a href="{{ url_for('new_note', user_id=user.id)}}">Add new Note</a></p>
+
+    <div class= "notes-button-block">
+        <table class="table">
+
+    {% if allnotes %}
+            <thead class="table-light">
+                <tr>
+                  <th scope="col">Title and Description</th>
+                  <th scope="col">Notebooks</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+        {% for notes in allnotes %}
+         <tr>
+
+        <td><p> <span style="color:#662483"><strong>{{notes.title}}</strong></span>, <em>{{notes.description}}</em></p></td>
+        <td>{% if notes.notebookss %}  
+
+         
+                {% for notebook in notes.notebookss  %}
+                
+                <p> <span style="color:#12a19a"><strong>{{ notebook.title }}</strong> </span> </p>
+                
+                {% endfor %}
+
+
+
+            {% endif %}
+            </td>
+
+
+<td class="action">
+
+
+
+ <div>
+
+<p>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</p>
+
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+        <p>
+            <input type="file" name="files[]" multiple="true" autocomplete="off" required>
+        </p>
+    </dl>
+    <p>
+        <input  type="submit" value="Add Photo">
+    </p>
+</form>
+    </div>
+               
+                <a href="/update_note/{{notes.id}}" class="btn btn-outline-success btn-sm">Update</button>
+                <a></a>
+                <a href="/delete_note/{{notes.id}}" class="btn btn-outline-danger btn-sm">Delete</button>
+                </td>
+                </tr>
+
+        {% endfor %}
+
+
+    {% endif %}
+
+
+              </tbody>
+          </table>
+    </div> 
+
+  <p class="resize"></p>  
+
+{% endblock %}

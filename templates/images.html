@@ -1,0 +1,40 @@
+
+
+{% block content %}
+        
+
+<div style="padding:20px;">
+
+<h4>Images:</h4>
+<h5><i>You can change images.</i></h5>
+<p>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+        <p>
+            <input type="file" name="files[]" multiple="true" autocomplete="off" required>
+        </p>
+    </dl>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+ 
+{% if filenames %}
+    {% for filename in filenames %}
+        <div style="padding:20px;float:left;">
+            <img width="300" src="{{ url_for('display_image', filename=filename) }}"> 
+        </div>
+    {% endfor %}
+{% endif %}
+</div>
+{% endblock %}
